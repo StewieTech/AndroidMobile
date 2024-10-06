@@ -5,6 +5,8 @@ import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 
 public class SecondActivity extends AppCompatActivity {
@@ -18,6 +20,7 @@ public class SecondActivity extends AppCompatActivity {
     String[] namePlayers = {"Lebron James", "Kobe Bryant", "Michael Jordan", "Christian Ronaldo", "Shaq Oneil", "Kevin Durant", "Steph Curry", "Dwight Howard", "JR Smith", "Demar Derozan"};
     String[] scorePlayers = {"10", "9", "10", "5","6","2","7","8","9","1"};
 
+    RecyclerView recyclerView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,12 +28,11 @@ public class SecondActivity extends AppCompatActivity {
 
         toolbar = findViewById(R.id.actToolbar);
         setSupportActionBar(toolbar);
+        FunAdapter adapter = new FunAdapter( namePlayers,scorePlayers, this, serialNumbers, imageIcons );
 
-        listView = findViewById(R.id.lstView);
-        PrimaryAdapter adapter = new PrimaryAdapter( namePlayers,scorePlayers, this, serialNumbers, imageIcons );
-        listView.setAdapter(adapter);
-
-
+        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
     }
 //    @Override

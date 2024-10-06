@@ -31,7 +31,7 @@
             app:layout_constraintVertical_bias="0.058" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/clickedDialog"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="You Clicked Player {dynamic}"

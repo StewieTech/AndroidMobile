@@ -60,25 +60,11 @@ public class FunAdapter extends RecyclerView.Adapter<FunAdapter.MyViewHolder> {
 
     @Override
     public int getItemCount() {
-        return 0;
+        return namePlayers.length;
     }
+
     
     
-/*
-    public View getView(int position, View convertView, ViewGroup parent) {
-        View view = inflater.inflate(R.layout.list_row_layout, null);
-
-        TextView namePlayerTextView = view.findViewById(R.id.viewNamePlayer);
-        TextView scorePlayerTextView = view.findViewById(R.id.viewScorePlayer);
-        TextView serialNumberTextView = view.findViewById(R.id.viewSerialNumber);
-        ImageView playerImageView = view.findViewById(R.id.viewImageView);
-        namePlayerTextView.setText(namePlayers[position]);
-        scorePlayerTextView.setText(scorePlayers[position]);
-        serialNumberTextView.setText(serialNumbers[position]);
-        playerImageView.setImageResource(imageIcons[position]);
-        return view;
-    }*/
-
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView namePlayerTextView ;
@@ -92,31 +78,36 @@ public class FunAdapter extends RecyclerView.Adapter<FunAdapter.MyViewHolder> {
             scorePlayerTextView = view.findViewById(R.id.viewScorePlayer);
             serialNumberTextView = view.findViewById(R.id.viewSerialNumber);
             playerImageView = view.findViewById(R.id.viewImageView);
-            view.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int index = getAdapterPosition();
-                    customDialog();
-                }
-            });
+
+            namePlayerTextView.setOnClickListener(tmp -> customDialog("You Clicked Player Name"));
+            scorePlayerTextView.setOnClickListener(tmp -> customDialog("You Clicked Player Score"));
+            serialNumberTextView.setOnClickListener(tmp -> customDialog("You Clicked Player Number"));
+            playerImageView.setOnClickListener(tmp -> customDialog("You Clicked Player Image"));
+
         }
 
     }
 
-    void customDialog() {
+    void customDialog(String outputText) {
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
         View view = LayoutInflater.from(context).inflate(R.layout.dialog_layout, null);
         alertDialog.setView(view);
 
+        TextView clickedDialog = view.findViewById(R.id.clickedDialog);
         Button btnDismiss = view.findViewById(R.id.btnDismiss);
+
+        clickedDialog.setText(outputText);
+
+        AlertDialog dialog = alertDialog.create();
         btnDismiss.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, "Try another button :) ", Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
             }
         });
 
-        alertDialog.create().show();
+        dialog.show();
 
     }
 }
