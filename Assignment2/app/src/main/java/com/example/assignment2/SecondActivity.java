@@ -1,6 +1,7 @@
 package com.example.assignment2;
 
 import android.os.Bundle;
+import android.view.Menu;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,7 +24,7 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        toolbar = findViewById(R.id.toolbarSecond);
+        toolbar = findViewById(R.id.actToolbar);
         setSupportActionBar(toolbar);
 
         listView = findViewById(R.id.lstView);
@@ -31,10 +32,16 @@ public class SecondActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
 
 
+
     }
-
-
-
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.toolbar_menu, menu);
+//        return super.onCreateOptionsMenu(menu);
+//    }
+//
+//
+//
 //    @Override
 //    public boolean onCreateOptionsMenu(Menu menu) {
 //        getMenuInflater().inflate(R.menu.toolbar_menu, menu);

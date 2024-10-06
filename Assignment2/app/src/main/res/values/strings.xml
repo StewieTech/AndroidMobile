@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Assignment 2 Soccer League</string>
+    <string name="app_name">Assignment 2 SoccerLeague</string>
     <string name="login">Login</string>
     <string name="email">Email</string>
     <string name="password">Password</string>

@@ -3,6 +3,7 @@ package com.example.assignment2;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -11,11 +12,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView errorTextView ;
 
 //
 //    @Override
@@ -49,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
 //        Log.d("Assign1", "on Resume method");
 //    }
 
+    Toolbar toolbar ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,7 +61,12 @@ public class MainActivity extends AppCompatActivity {
         EditText emailEdit = findViewById(R.id.editTextTextEmailAddress);
         EditText passwordEdit = findViewById(R.id.editTextTextPassword);
         Button btnLogin = findViewById(R.id.buttonLogin);
-        errorTextView = findViewById(R.id.viewError);
+        TextView errorTextView = findViewById(R.id.viewError);
+        errorTextView.setVisibility(View.INVISIBLE);
+        toolbar = findViewById(R.id.toolbarMain);
+        setSupportActionBar(toolbar);
+
+
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                 } else {
                     Toast.makeText(MainActivity.this, "Login Failed </3 ", Toast.LENGTH_LONG).show();
-                    errorTextView.setText("Invalid email or password");
+                    errorTextView.setText("Invalid email or password. check your credentials and try again");
                     errorTextView.setVisibility(View.VISIBLE);
                 }
 
@@ -85,9 +92,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
-
-
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+
+
+
+
+
+
 }
