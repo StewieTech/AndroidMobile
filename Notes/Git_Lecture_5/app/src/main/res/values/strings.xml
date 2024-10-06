@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">S23_Lecture_5</string>
+    <string-array name="cars">
+        <item>Toyota</item>
+        <item>Honda</item>
+        <item>Nissan</item>
+        <item>Suzuki</item>
+        <item>Tesla</item>
+        <item>BMW</item>
+        <item>Ford</item>
+        <item>Hyundai</item>
+        <item>Mercedes</item>
+        <item>Mitsubishi</item>
+        <item>Hino</item>
+    </string-array>
+</resources>

@@ -1,0 +1,20 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.SoccerLeagueApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name= "Theme.Custom" parent = "Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/orange</item>
+        <item name="toolbarStyle">@style/Theme.Custom.Toolbar</item>
+    </style>
+
+    <style name="Theme.Custom.Toolbar" parent="Widget.Material3.Toolbar">
+        <item name="android:background">@color/orange  </item>
+        <item name="titleTextColor">@color/white</item>
+    </style>
+
+
+</resources>
+<!--    <style name="Theme.Assignment1" parent="Base.Theme.Assignment1" />-->
