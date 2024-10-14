@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AskLolaLingo</string>
+    <string name="lola_image">This is a Lola Image</string>
 </resources>
