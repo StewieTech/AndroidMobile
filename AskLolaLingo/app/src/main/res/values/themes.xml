@@ -1,8 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.AskLolaLingo" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="Base.Theme.AskLolaLingo" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/glossyPurple</item>
+        <item name="colorPrimaryDark">@color/glossyPurpleDark</item>
+        <item name="colorAccent">@color/glossyPurple</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:windowBackground">@color/grey</item>
     </style>
 
     <style name="Theme.AskLolaLingo" parent="Base.Theme.AskLolaLingo" />

@@ -38,7 +38,7 @@ class AskLolaChat : AppCompatActivity() {
         handler.postDelayed(object : Runnable {
             override fun run() {
 
-                val fadeOut = ObjectAnimator.ofFloat(imageViewLola, "alpha",.9f,.4f);
+                val fadeOut = ObjectAnimator.ofFloat(imageViewLola, "alpha",.9f,.3f);
                 fadeOut.duration = 1000 ;
                 fadeOut.start() ;
 
@@ -59,7 +59,7 @@ class AskLolaChat : AppCompatActivity() {
 
                         ims.close()
 
-                        val fadeIn = ObjectAnimator.ofFloat(imageViewLola, "alpha",.4f,.9f);
+                        val fadeIn = ObjectAnimator.ofFloat(imageViewLola, "alpha",.6f,.9f);
                         fadeIn.duration = 1000 ;
                         fadeIn.start() ;
 
