@@ -1,4 +1,6 @@
 package com.example.asklolalingo.domain.remote
+import com.example.asklolalingo.data.model.ChatCompletionRequest
+import com.example.asklolalingo.data.model.ChatCompletionResponse
 import retrofit2.http.Body
 import retrofit2.http.Headers ;
 import retrofit2.http.POST ;
