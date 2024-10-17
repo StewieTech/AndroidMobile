@@ -8,6 +8,7 @@ import android.os.Looper
 import android.widget.ImageView
 import android.animation.ObjectAnimator ;
 import androidx.appcompat.app.AppCompatActivity
+import com.example.asklolalingo.fragments.AskLolaChatFragment
 
 
 class AskLolaChat : AppCompatActivity() {
@@ -31,6 +32,12 @@ class AskLolaChat : AppCompatActivity() {
         if (imageFileNames.isNotEmpty()) {
             startSlideshow()
         } else {
+        }
+
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, AskLolaChatFragment())
+                .commit()
         }
     }
 
