@@ -2,6 +2,7 @@ package com.example.asklolalingo.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.example.asklolalingo.domain.GetLolaResponseUseCase
 
 
 class ChatViewModelFactory {
