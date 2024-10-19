@@ -19,7 +19,10 @@ object NetworkModule {
         val retrofit = Retrofit.Builder()
             .baseUrl(BASE_URL)
             .client(okHttpClient)
-            .addConverterFactory(GsonconverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
+        return retrofit.create(OpenAIService::class.java) ;
     }
 
     private class ApiKeyInterceptor(private val apikey: String) : Interceptor {
