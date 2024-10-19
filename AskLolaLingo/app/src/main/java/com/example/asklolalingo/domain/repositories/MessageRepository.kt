@@ -1,13 +1,16 @@
 package com.example.asklolalingo.domain.repositories
 
+import com.example.asklolalingo.data.LolaPersonalityLevels
 import com.example.asklolalingo.data.model.ChatCompletionRequest
 import com.example.asklolalingo.data.model.Message
 import com.example.asklolalingo.domain.remote.OpenAIService
 
 class MessageRepository(private val openAIService: OpenAIService) {
 
+    private var userLevel: Int = 2 ;
+
     suspend fun createLolaTextResponse(inputText: String): String {
-        val contentAnswer = "You are Lola, You help people learn french";
+        val contentAnswer = LolaPersonalityLevels.getPersonalityByLevel(userLevel)
 
         val messages = listOf(
             Message(role = "system", content = contentAnswer),
