@@ -46,7 +46,7 @@ dependencies {
     implementation("com.square.retrofit2:converter-gson:2.9.0")
 
     // OkHttp for HTTP client
-    implementation("com.square.okhttp3:okhttp:4.9.1")
+    implementation("com.squareup.okhttp3:okhttp:4.9.1")
 
     // Gson for JSON parsing
     implementation("com.google.code.gson:gson:2.8.6")
