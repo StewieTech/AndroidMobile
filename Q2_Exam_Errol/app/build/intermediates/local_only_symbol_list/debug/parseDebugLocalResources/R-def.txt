@@ -1,0 +1,36 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color blue
+color green
+color ic_launcher_background
+color lighterGreen
+color orange
+color red
+color violet
+color white
+color yellow
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+id btnRainbow
+id btnRed
+id fifthBox
+id firstBox
+id firstrowLayout
+id fourthBox
+id fourthRowLayout
+id main
+id secondBox
+id secondRowLayout
+id sixthBox
+id thirdBox
+id thirdRowLayout
+id toolbar
+layout activity_main
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+style Base.Theme.Q2_Exam_Errol
+style Theme.Q2_Exam_Errol
+xml backup_rules
+xml data_extraction_rules
