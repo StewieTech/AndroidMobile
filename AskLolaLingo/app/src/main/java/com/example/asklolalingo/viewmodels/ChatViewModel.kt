@@ -3,8 +3,9 @@ package com.example.asklolalingo.viewmodels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.asklolalingo.domain.GetLolaResponseUseCase
 
-class ChatViewModel(private val getLolaResponseUseCase: GetLolaResponseUseCase) : ViewModel {
+class ChatViewModel(private val getLolaResponseUseCase: GetLolaResponseUseCase) : ViewModel() {
     private val _response = MutableLiveData<String>() ;
     val response: LiveData<String> get() = _response ;
 
