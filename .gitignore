@@ -1,6 +1,5 @@
 AskLolaLingo/*.iml
 AskLolaLingo/.gradle
-AskLolaLingo/app/build.gradle.kts
 /AskLolaLingo/local.properties
 /.idea/caches
 /.idea/libraries
@@ -9,12 +8,9 @@ AskLolaLingo/app/build.gradle.kts
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
 .DS_Store
-AskLolaLingo/build
 /captures
 .externalNativeBuild
 .cxx
 local.properties
 AskLolaLingo/app/src/main/java/com/example/asklolalingo/data/LolaPersonalityLevels.kt
-app/build
-app/build.gradle.kts
-AskLolaLingo/app/build.gradle.kts
+AskLolaLingo/app/apikeys.properties

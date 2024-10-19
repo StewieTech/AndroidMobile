@@ -1,9 +1,19 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
 }
 
-val openaiApiKey: String? by project
+val openaiApiKeyFile = file("apikeys.properties")
+val openaiKey: String? = if (openaiApiKeyFile.exists()) {
+    val properties = Properties()
+    properties.load(openaiApiKeyFile.inputStream())
+    properties.getProperty("OPENAI_KEY")
+} else {
+    throw GradleException("apikeys.properties file is missing")
+}
+
 
 android {
     namespace = "com.example.asklolalingo"
@@ -17,7 +27,7 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField("String", "OPENAI_API_KEY", "\"${openaiApiKey ?: ""} \"")
+        buildConfigField("String", "OPENAI_API_KEY", "\"$openaiKey\"")
     }
 
     buildTypes {
