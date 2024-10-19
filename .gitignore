@@ -17,3 +17,4 @@ local.properties
 AskLolaLingo/app/src/main/java/com/example/asklolalingo/data/LolaPersonalityLevels.kt
 app/build
 app/build.gradle.kts
+AskLolaLingo/app/build.gradle.kts
