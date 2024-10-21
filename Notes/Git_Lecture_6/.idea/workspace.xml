@@ -36,10 +36,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb9f4cc7-50f8-454d-99f8-0ca8dacfea03" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../AskLolaLingo/app/src/main/java/com/example/asklolalingo/data/LolaPersonalityLevels.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../AskLolaLingo/app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../AskLolaLingo/app/.gitignore" afterDir="false" />
-    </list>
+    <list default="true" id="bb9f4cc7-50f8-454d-99f8-0ca8dacfea03" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -119,7 +116,7 @@
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "5fb993c5",
+    "git-widget-placeholder": "102c2017",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Errol/AndroidStudioProjects/Notes/Git_Lecture_6"
   }

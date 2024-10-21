@@ -1,4 +1,4 @@
-package com.example.asklolalingo.domain.repositories
+package com.example.asklolalingo.data.repository
 
 import com.example.asklolalingo.data.LolaPersonalityLevels
 import com.example.asklolalingo.data.model.ChatCompletionRequest
