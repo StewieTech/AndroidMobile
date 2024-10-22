@@ -1,7 +1,6 @@
 package com.example.asklolalingo.view
 
 import android.os.Bundle
-import android.text.method.ScrollingMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -50,14 +49,12 @@ class ChatFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState) ;
 
-        val chatTextView = view.findViewById<TextView>(R.id.chatTextView) ;
         val btnSend = view.findViewById<ImageButton>(R.id.btnSend) ;
         val inputEditText = view.findViewById<EditText>(R.id.inputEditText) ;
         recyclerView = view.findViewById(R.id.recyclerView) ;
 
         recyclerView.layoutManager = LinearLayoutManager(requireContext()) ;
 
-        chatTextView.movementMethod = ScrollingMovementMethod() ;
 
         btnSend.setOnClickListener {
             val userMessage = inputEditText.text.toString()
