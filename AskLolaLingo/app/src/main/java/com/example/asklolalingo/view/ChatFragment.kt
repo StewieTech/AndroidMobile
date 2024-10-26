@@ -24,6 +24,7 @@ class ChatFragment : Fragment() {
 
     private lateinit var viewModel: ChatViewModel
     private lateinit var recyclerView: RecyclerView ;
+//    private lateinit var chatAda
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
