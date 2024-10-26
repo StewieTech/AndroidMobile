@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -67,7 +68,27 @@ class ChatFragment : Fragment() {
             if (userMessage.isNotEmpty()) {
                 inputEditText.text.clear()
 
+                val message = Message(userMessage, sender = "user") ;
+                messages.add(message) ;
+                chatAdapter.notifyItemInserted(messages.size - 1) ;
+
+                viewModel.getLolaResponse(userMessage) ;
             }
         }
+
+        viewModel.lolaResponse.observe(viewLifecycleOwner) {
+            response ->
+            val lolaMessage = Message(response, sender = "lola")
+            messages.add(lolaMessage)
+            chatAdapter.notifyItemInserted(messages.size - 1)
+            recyclerView.scrollToPosition(messages.size -1 )
+        }
+
+        viewModel.errorMessage.observe(viewLifecycleOwner) {
+            error -> Toast.makeText(requireContext(), error, Toast.LENGTH_LONG).show()
+        }
+
+
+
     }
 }
