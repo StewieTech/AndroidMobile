@@ -52,6 +52,7 @@ class ChatAdapter(private val messages: List<Message>) : RecyclerView.Adapter<Ch
     }
 
     override fun getItemCount(): Int {
-        Int = messages.size ;
+        return messages.size ;
+
     }
 }

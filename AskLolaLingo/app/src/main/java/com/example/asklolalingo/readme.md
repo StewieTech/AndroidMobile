@@ -13,6 +13,9 @@
 - They should also show the french and english captions below before they talk
 - If users come from Linkedin it will automatically have LinkedinFree5
 
+### Product 1.0
+- Enhance User Experience: Consider adding features like timestamps, message status indicators, or typing animations.
+
 ### eventually I need to understand below
 ``` java
 override fun <T : ViewModel?> create(modelClass: Class<T>): T {

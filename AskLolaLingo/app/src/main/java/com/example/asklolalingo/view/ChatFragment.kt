@@ -19,12 +19,15 @@ import com.example.asklolalingo.domain.remote.NetworkModule
 import com.example.asklolalingo.viewmodels.ChatViewModel
 import com.example.asklolalingo.viewmodels.ChatViewModelFactory
 import com.example.asklolalingo.R ;
+import com.example.asklolalingo.adapters.ChatAdapter
+import com.example.asklolalingo.data.model.Message
 
 class ChatFragment : Fragment() {
 
-    private lateinit var viewModel: ChatViewModel
+    private lateinit var viewModel: ChatViewModel  ;
     private lateinit var recyclerView: RecyclerView ;
-//    private lateinit var chatAda
+    private lateinit var chatAdapter: ChatAdapter ;
+    private val messages = mutableListOf<Message>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,12 +58,15 @@ class ChatFragment : Fragment() {
         recyclerView = view.findViewById(R.id.recyclerView) ;
 
         recyclerView.layoutManager = LinearLayoutManager(requireContext()) ;
+        chatAdapter = ChatAdapter(messages) ;
+        recyclerView.adapter = chatAdapter ;
 
 
         btnSend.setOnClickListener {
             val userMessage = inputEditText.text.toString()
             if (userMessage.isNotEmpty()) {
                 inputEditText.text.clear()
+
             }
         }
     }
