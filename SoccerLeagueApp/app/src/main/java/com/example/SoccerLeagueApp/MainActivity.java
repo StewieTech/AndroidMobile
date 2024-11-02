@@ -1,12 +1,14 @@
 package com.example.SoccerLeagueApp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -50,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
 //        Log.d("Assign1", "on Resume method");
 //    }
 
+    SharedPreferences sharedPreferences ;
+    CheckBox checkBox ;
     Toolbar toolbar ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         errorTextView.setVisibility(View.INVISIBLE);
         toolbar = findViewById(R.id.toolbarMain);
         setSupportActionBar(toolbar);
+        CheckBox rememberMeCheckBox = findViewById(R.id.rememberMeBox) ;
 
 
 
@@ -91,8 +96,33 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        
+        loadData() ;
+        
+        rememberMeCheckBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String rememberEmail = emailEdit.getText().toString();
+                String rememberPassword = passwordEdit.getText().toString();
+                saveData();
+                
+            }
+        });
+        
+        
 
     }
+
+    private void saveData() {
+    }
+
+    private void loadData() {
+
+       /* sharedPreferences = getSharedPreferences("My_Pref", MODE_PRIVATE);
+        String text = sharedPreferences.getString("myData", "");
+        */
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.toolbar_menu, menu);
