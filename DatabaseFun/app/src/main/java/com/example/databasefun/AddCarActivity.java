@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.room.Room;
 
 public class AddCarActivity extends AppCompatActivity {
 
@@ -24,6 +25,8 @@ public class AddCarActivity extends AppCompatActivity {
         btnSave = findViewById(R.id.btnSave );
         edtMake = findViewById(R.id.edtMake) ;
         edtName = findViewById(R.id.edtName) ;
+
+        AppDatabase db = Room.databaseBuilder(this, AppDatabase.class, "myDB").build();
 
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
