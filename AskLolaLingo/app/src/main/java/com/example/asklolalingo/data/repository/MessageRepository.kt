@@ -2,7 +2,7 @@ package com.example.asklolalingo.data.repository
 
 import com.example.asklolalingo.data.LolaPersonalityLevels
 import com.example.asklolalingo.data.model.ChatCompletionRequest
-import com.example.asklolalingo.data.model.Message
+import com.example.asklolalingo.data.model.ChatCompletionMessage
 import com.example.asklolalingo.domain.remote.OpenAIService
 
 class MessageRepository(private val openAIService: OpenAIService) {
@@ -13,8 +13,8 @@ class MessageRepository(private val openAIService: OpenAIService) {
         val contentAnswer = LolaPersonalityLevels.getPersonalityByLevel(userLevel)
 
         val messages = listOf(
-            Message(role = "system", content = contentAnswer),
-            Message(role = "user", content = inputText)
+            ChatCompletionMessage(role = "system", content = contentAnswer),
+            ChatCompletionMessage(role = "user", content = inputText)
         )
 
         val request = ChatCompletionRequest(

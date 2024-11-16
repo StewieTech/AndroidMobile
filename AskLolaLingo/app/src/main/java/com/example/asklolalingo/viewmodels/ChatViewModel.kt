@@ -8,16 +8,19 @@ import com.example.asklolalingo.domain.GetLolaResponseUseCase
 import kotlinx.coroutines.launch
 
 class ChatViewModel(private val getLolaResponseUseCase: GetLolaResponseUseCase) : ViewModel() {
-    private val _response = MutableLiveData<String>() ;
-    val response: LiveData<String> get() = _response ;
+    private val _lolaResponse = MutableLiveData<String>() ;
+    val lolaResponse: LiveData<String> get() = _lolaResponse ;
+
+    private val _errorMessage = MutableLiveData<String>() ;
+    val errorMessage: LiveData<String> get() = _errorMessage  ;
 
     fun getLolaResponse(inputText: String) {
         viewModelScope.launch {
             try {
                 val result = getLolaResponseUseCase(inputText) ;
-                _response.value = result ;
+                _lolaResponse.value = result ;
             } catch (e : Exception) {
-                _response.value = "Error: ${e.message}"
+                _errorMessage.value = "Error: ${e.message}"
             }
         }
     }

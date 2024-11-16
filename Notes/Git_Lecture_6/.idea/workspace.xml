@@ -36,7 +36,20 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb9f4cc7-50f8-454d-99f8-0ca8dacfea03" name="Changes" comment="" />
+    <list default="true" id="bb9f4cc7-50f8-454d-99f8-0ca8dacfea03" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../DatabaseFun/app/src/main/java/com/example/databasefun/AppDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AskLolaLingo/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../AskLolaLingo/.idea/caches/deviceStreaming.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AskLolaLingo/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../AskLolaLingo/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DatabaseFun/app/src/main/java/com/example/databasefun/AddCarActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DatabaseFun/app/src/main/java/com/example/databasefun/AddCarActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DatabaseFun/app/src/main/java/com/example/databasefun/CarAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DatabaseFun/app/src/main/java/com/example/databasefun/CarAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DatabaseFun/app/src/main/java/com/example/databasefun/CarDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DatabaseFun/app/src/main/java/com/example/databasefun/CarDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DatabaseFun/app/src/main/java/com/example/databasefun/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DatabaseFun/app/src/main/java/com/example/databasefun/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DatabaseFun/app/src/main/res/layout/activity_add_car.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../DatabaseFun/app/src/main/res/layout/activity_add_car.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Git_Lecture_9/MyApplication/app/src/main/java/com/example/myapplication/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Git_Lecture_9/MyApplication/app/src/main/java/com/example/myapplication/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SoccerLeagueApp/app/src/main/java/com/example/SoccerLeagueApp/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../SoccerLeagueApp/app/src/main/java/com/example/SoccerLeagueApp/MainActivity.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,7 +58,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\Errol\.android\avd\Pixel_4_XL_API_35.avd)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\Errol\.android\avd\Copy_of_Pixel_4_XL_API_35.avd)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -108,19 +121,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Android App.app.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "102c2017",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Errol/AndroidStudioProjects/Notes/Git_Lecture_6"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Android App.app.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;errol-seneca&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Errol/AndroidStudioProjects/Notes/Git_Lecture_9/MyApplication&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="F22_Lecture_6.app.main" />

@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,12 +20,15 @@ import com.example.asklolalingo.domain.remote.NetworkModule
 import com.example.asklolalingo.viewmodels.ChatViewModel
 import com.example.asklolalingo.viewmodels.ChatViewModelFactory
 import com.example.asklolalingo.R ;
+import com.example.asklolalingo.adapters.ChatAdapter
+import com.example.asklolalingo.data.model.Message
 
 class ChatFragment : Fragment() {
 
-    private lateinit var viewModel: ChatViewModel
+    private lateinit var viewModel: ChatViewModel  ;
     private lateinit var recyclerView: RecyclerView ;
-//    private lateinit var chatAda
+    private lateinit var chatAdapter: ChatAdapter ;
+    private val messages = mutableListOf<Message>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,13 +59,36 @@ class ChatFragment : Fragment() {
         recyclerView = view.findViewById(R.id.recyclerView) ;
 
         recyclerView.layoutManager = LinearLayoutManager(requireContext()) ;
+        chatAdapter = ChatAdapter(messages) ;
+        recyclerView.adapter = chatAdapter ;
 
 
         btnSend.setOnClickListener {
             val userMessage = inputEditText.text.toString()
             if (userMessage.isNotEmpty()) {
                 inputEditText.text.clear()
+
+                val message = Message(userMessage, sender = "user") ;
+                messages.add(message) ;
+                chatAdapter.notifyItemInserted(messages.size - 1) ;
+
+                viewModel.getLolaResponse(userMessage) ;
             }
         }
+
+        viewModel.lolaResponse.observe(viewLifecycleOwner) {
+            response ->
+            val lolaMessage = Message(response, sender = "lola")
+            messages.add(lolaMessage)
+            chatAdapter.notifyItemInserted(messages.size - 1)
+            recyclerView.scrollToPosition(messages.size -1 )
+        }
+
+        viewModel.errorMessage.observe(viewLifecycleOwner) {
+            error -> Toast.makeText(requireContext(), error, Toast.LENGTH_LONG).show()
+        }
+
+
+
     }
 }
