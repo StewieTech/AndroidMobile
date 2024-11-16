@@ -1,0 +1,26 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color white
+drawable baseline_add_24
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+id btnSave
+id edtMake
+id edtName
+id floatingActionButton
+id main
+id recyclerView
+id textView
+id txtMake
+id txtName
+layout activity_add_car
+layout activity_main
+layout row_layout
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+style Base.Theme.DatabaseFun
+style Theme.DatabaseFun
+xml backup_rules
+xml data_extraction_rules
