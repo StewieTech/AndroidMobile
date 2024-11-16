@@ -11,13 +11,17 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     FloatingActionButton floatingActionButton ;
     RecyclerView recyclerView ;
+    List<Car> cars ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +30,9 @@ public class MainActivity extends AppCompatActivity {
     recyclerView = findViewById(R.id.recyclerView) ;
     floatingActionButton = findViewById(R.id.floatingActionButton) ;
 
-    String[] cars = {"Toyota", "Honda", "Suzuki", "Nissan", "Tesla", "Ford"} ;
+    AppDatabase db = Room.databaseBuilder(this, AppDatabase.class, "myDB").allowMainThreadQueries().build() ;
+
+    cars = db.carDao().getAllCars() ;
 
     CarAdapter carAdapter = new CarAdapter(MainActivity.this, cars);
 
@@ -41,7 +47,13 @@ public class MainActivity extends AppCompatActivity {
         }
     });
 
-
-
     }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        cars = db.carDao().getAllCars() ;
+        carAdapter.notifyDataSetChanged() ;
+        }
 }
+
+

@@ -4,18 +4,24 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.List;
+
 public class CarAdapter extends RecyclerView.Adapter<CarAdapter.MyViewHolder> {
     Context context ;
-    String[] cars ;
+    List<Car> cars ;
+    AppDatabase db;
 
 
-    CarAdapter(Context context, String[] cars) {
+    CarAdapter(Context context, List<Car> cars, AppDatabase db) {
         this.context = context ;
         this.cars = cars ;
+        this.db = db ;
+
     }
 
     @NonNull
@@ -27,20 +33,32 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull CarAdapter.MyViewHolder holder, int position) {
-        holder.txtMake.setText(cars[position]) ;
+        holder.txtMake.setText(cars.get(position).getCarMake());
+        holder.txtName.setText(cars.get(position).getCarName());
 
     }
 
     @Override
     public int getItemCount() {
-        return cars.length;
+        return cars.size() ;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
+        TextView txtName, txtMake ;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             txtMake = itemView.findViewById(R.id.txtMake) ;
             txtName = itemView.findViewById(R.id.txtName) ;
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    db.carDao().deleteByMake(cars.get(getAdapterPosition()).getCarMake());
+                    cars.remove(getAdapterPosition()) ;
+                    notifyItemChanged(getAdapterPosition());
+
+                }
+            });
         }
     }
 }

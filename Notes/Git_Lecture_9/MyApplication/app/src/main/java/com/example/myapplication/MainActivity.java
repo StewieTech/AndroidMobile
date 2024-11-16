@@ -53,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_main);
 
         btnSave = findViewById(R.id.btnSave);
@@ -95,9 +97,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }).start();
-
-
-
     }
 
     private void saveData()

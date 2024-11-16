@@ -53,11 +53,21 @@ public class MainActivity extends AppCompatActivity {
 //    }
 
     SharedPreferences sharedPreferences ;
-    CheckBox checkBox ;
+//    CheckBox rememberMeCheckBox = findViewById(R.id.rememberMeBox) ;
+    CheckBox rememberMeCheckBox ;
     Toolbar toolbar ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+       sharedPreferences = getSharedPreferences("My_Pref", MODE_PRIVATE)  ;
+       boolean doYouRemember = sharedPreferences.getBoolean("doYouRemember", false) ;
+
+       if (doYouRemember) {
+           Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+           startActivity(intent);
+//           finish();
+       } else {
         setContentView(R.layout.activity_main);
         Log.d("Assign2", "On Create method");
 
@@ -69,9 +79,7 @@ public class MainActivity extends AppCompatActivity {
         errorTextView.setVisibility(View.INVISIBLE);
         toolbar = findViewById(R.id.toolbarMain);
         setSupportActionBar(toolbar);
-        CheckBox rememberMeCheckBox = findViewById(R.id.rememberMeBox) ;
-
-
+        rememberMeCheckBox = findViewById(R.id.rememberMeBox) ;
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
                 if(emailText.equals("admin@example.com") && password.equals("1234")) {
                     Toast.makeText(MainActivity.this, "You Logged in <3", Toast.LENGTH_SHORT).show();
                     errorTextView.setVisibility(View.INVISIBLE);
+                    saveData();
                     Intent intent = new Intent(MainActivity.this, SecondActivity.class);
                     startActivity(intent);
                 } else {
@@ -92,36 +101,18 @@ public class MainActivity extends AppCompatActivity {
                     errorTextView.setText("Invalid email or password. check your credentials and try again");
                     errorTextView.setVisibility(View.VISIBLE);
                 }
-
-
             }
         });
-        
-        loadData() ;
-        
-        rememberMeCheckBox.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String rememberEmail = emailEdit.getText().toString();
-                String rememberPassword = passwordEdit.getText().toString();
-                saveData();
-                
-            }
-        });
-        
-        
-
+       }
     }
 
     private void saveData() {
+        boolean doYouRememberBox = rememberMeCheckBox.isChecked() ;
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean("doYouRemember", doYouRememberBox);
+        editor.apply();
     }
 
-    private void loadData() {
-
-       /* sharedPreferences = getSharedPreferences("My_Pref", MODE_PRIVATE);
-        String text = sharedPreferences.getString("myData", "");
-        */
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -129,11 +120,4 @@ public class MainActivity extends AppCompatActivity {
 //        return super.onCreateOptionsMenu(menu);
         return true ;
     }
-
-
-
-
-
-
-
 }
