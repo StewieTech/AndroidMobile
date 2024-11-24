@@ -1,6 +1,6 @@
 package com.example.fetchapp;
 
-public class School {
+public class Uni {
     String name ;
     String stateProvince ;
     String webPage ;
@@ -29,7 +29,7 @@ public class School {
         this.webPage = webPage;
     }
 
-    public School(String name, String stateProvince, String webPage) {
+    public Uni(String name, String stateProvince, String webPage) {
         this.name = name;
         this.stateProvince = stateProvince;
         this.webPage = webPage;
