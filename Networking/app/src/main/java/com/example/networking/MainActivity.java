@@ -54,8 +54,8 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
 
         User[] userList = new User[] {
-                new User(1, "Steve", "steve@jobs.ca");
-                new User(2, "Bill", "bill@gates.ca");
+                new User(1, "Steve", "steve@jobs.ca"),
+                new User(2, "Bill", "bill@gates.ca"),
         };
 
 
@@ -96,8 +96,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void fetchJSON() {
-        String url = "https://jsonplaceholder.typicode.com/todos/1";
-        String url2 = "https://jsonplaceholder.typicode.com/users";
+        String url2 = "https://jsonplaceholder.typicode.com/todos/1";
+        String url = "https://jsonplaceholder.typicode.com/users";
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 
@@ -140,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        requestQueue.add(jsonObjectRequest);
+        requestQueue.add(jsonArrayRequest);
     }
 
     private InputStream openConnection(String urlString) {
