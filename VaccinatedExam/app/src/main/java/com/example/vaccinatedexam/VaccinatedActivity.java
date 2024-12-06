@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 public class VaccinatedActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView ;
-    private VaccinatedAdapter vaccinatedAdapter ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
