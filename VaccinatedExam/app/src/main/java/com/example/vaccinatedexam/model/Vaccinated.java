@@ -51,7 +51,7 @@ public class Vaccinated {
         this.gender = gender;
     }
 
-    public Person(String firstName, String lastName, String gender) {
+    public Vaccinated(String firstName, String lastName, String gender) {
         this.firstName = firstName ;
         this.lastName = lastName ;
         this.gender = gender ;
